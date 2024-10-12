@@ -82,7 +82,7 @@ jobs:
         run: |
          docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
 
-      #- name: Stop and remove container if running
+      #- name: Stop and remove container if running dummy--
       #  run: |
       #   docker ps -q --filter "name=TextSum" | grep -q . && docker stop TextSum && docker rm -fv TextSum
 
