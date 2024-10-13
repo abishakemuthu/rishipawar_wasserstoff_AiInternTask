@@ -20,3 +20,11 @@ Developed an automated text summarization pipeline to extract concise summaries 
 - It should calculate the processing time and display it to the user for measuring performance.
 
 - It should save the metadata, extracted summary and keywords to the mongodb Atlas which can be extracted later for analysis purpose.
+
+## Model
+
+- The PEGASUS (Pre-training with Extracted Gap-sentences for Abstractive Summarization) is a machine learning model designed to automatically generate concise summaries of long documents developed by google.
+
+- Pegasus is based on transformer architecture which will extract the important text from the given documents and convert them into concise summary that will be simple and more readable.
+
+- Pegasus achieves SOTA summarization performance on all 12 downstream tasks, as measured by ROUGE and human evaluation.
