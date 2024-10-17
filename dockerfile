@@ -1,8 +1,8 @@
-FROM python:3.8-slim
+FROM python:3.8-slim-buster
 WORKDIR /app
-ADD . /app
-RUN pip install --upgrade pip
+COPY . /app
+
+RUN apt update -y && apt install awscli -y
+
 RUN pip install -r requirements.txt
-EXPOSE 80
-ENV NAME World
 CMD ["python", "app.py"]
