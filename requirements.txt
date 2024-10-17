@@ -6,4 +6,4 @@ loguru
 sentencepiece
 streamlit
 scikit-learn
-spacy==3.4.1
+#spacy==3.4.1
