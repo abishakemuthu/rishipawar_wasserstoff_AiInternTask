@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Installing dependencies"
+      - pip install --upgrade pip
+      - pip install -r requirements.txt
+
+  pre_build:
+    commands:
+      - echo "Running pre-build phase"
+      - echo "Building the Docker image"
+      - docker build -t text-summarization-app .
+
+  build:
+    commands:
+      - echo "Starting build phase"
+      - echo "Running tests (optional)"
+      - pytest
+
+  post_build:
+    commands:
+      - echo "Build completed"
+      - echo "Tagging and pushing the Docker image to ECR"
+      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - docker tag text-summarization-app:latest 565393064488.dkr.ecr.eu-north-1.amazonaws.com/textsum:latest
+      - docker push 565393064488.dkr.ecr.eu-north-1.amazonaws.com/textsum:latest
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+
+cache:
+  paths:
+    - '/root/.cache/pip/**/*'
