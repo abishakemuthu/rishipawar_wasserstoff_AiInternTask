@@ -1,9 +1,6 @@
-pymongo
-torch
+streamlit
 transformers
 pdfplumber
+pymongo
 loguru
-sentencepiece
-streamlit
 scikit-learn
-#spacy==3.4.1

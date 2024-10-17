@@ -1,13 +1,13 @@
 from collections import Counter
 import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+import string
 #import spacy
 #from spacy.lang.en.stop_words import STOP_WORDS
 #from string import punctuation
 #nlp = spacy.load('en_core_web_sm')
-from sklearn.feature_extraction.text import TfidfVectorizer
 #stopwords = list(STOP_WORDS)
 #allowed_pos = ['ADJ','PROPN','VERB','NOUN']
-import string
 
 #def preprocess_text(text):
 #    doc =  nlp(re.sub(r'\s+', ' ', text)) # Clean spaces, tabs and newlines
